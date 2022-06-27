@@ -33,7 +33,7 @@ npm run testdist
 To publish the build:
 
 ```sh
-npm run publish
+npm run publishProd
 ```
 
 ## Credits
