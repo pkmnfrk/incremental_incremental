@@ -13,4 +13,8 @@ jobs:
           node-version: '14'
       - run: npm i
       - run: npm run build-prod
-      - run: npm run publishProd
+      - run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run publishProd -- -u "github-actions-bot <support+actions@github.com>"
