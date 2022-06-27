@@ -19,9 +19,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         name: Clone gh-pages branch
       - run: |
-          git rm *
+          git rm .
           cp -r ../dist/. .
-          git add *
+          git add .
         working-directory: ./ghpages
         name: Copy new build
       - run: git commit -m "Updates"
