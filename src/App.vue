@@ -39,7 +39,7 @@
             Disclaimer: This game is in development. It might not work properly, time scales might be messed up,
             it is definitely not balanced or fun, etc. In time, these things will change (maybe except the fun part :), so bear with me!
         </p>
-        <p>Any resemblance to other incremental games is unintentional, except where funny.</p>
+        <p>Any resemblance to other incremental games is wholly unintentional, except where funny.</p>
 
         <p>&copy; 2022 by Mike Caron. <a href="https://github.com/pkmnfrk/incremental_incremental">GitHub</a></p>
     </footer>
