@@ -58,7 +58,9 @@ const config = {
       templateContent: ({ htmlWebpackPlugin }) => '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>' + htmlWebpackPlugin.options.title + '</title></head><body><div id=\"app\"></div></body></html>',
       filename: 'index.html',
     }),
-    new CleanPlugin(),
+    new CleanPlugin({
+        keep: ".nojekyll",
+    }),
   ],
   optimization: {
     runtimeChunk: 'single',
