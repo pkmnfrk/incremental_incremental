@@ -15,7 +15,12 @@ jobs:
       - run: npm run build-prod
       - run: echo -n "" > dist/.nojekyll
       - run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git clone https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git ghpages -b gh-pages --depth 1
+          cd ghpages
+          git rm *
+          cp -r ../dist/. .
+          git add *
+          git commit -m "Updates" --author "github-actions-bot <support+actions@github.com>"
+          git push origin gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: npm run publishProd -- -u "github-actions-bot <support+actions@github.com>"
