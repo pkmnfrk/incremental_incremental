@@ -19,7 +19,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         name: Clone gh-pages branch
       - run: |
-          git rm .
+          git rm -r .
           cp -r ../dist/. .
           git add .
         working-directory: ./ghpages

@@ -37,7 +37,7 @@
     <footer>
         <p>
             Disclaimer: This game is in early development. It might not work properly, time scales might be messed up,
-            it is definitely not balanced or fun, etc. In time, these things will change (maybe except the fun part :), so bear with me! 6
+            it is definitely not balanced or fun, etc. In time, these things will change (maybe except the fun part :), so bear with me! 5
         </p>
         <p>Any resemblance to other incremental games is wholly unintentional, except where funny.</p>
 
