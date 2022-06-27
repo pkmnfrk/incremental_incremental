@@ -13,6 +13,7 @@ jobs:
           node-version: '14'
       - run: npm i
       - run: npm run build-prod
+      - run: echo -n "" > dist/.nojekyll
       - run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         env:
