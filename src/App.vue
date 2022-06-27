@@ -29,14 +29,20 @@
 </script>
 
 <template>
-  <div>
-    <h1>
-      Incremental Incremental
-    </h1>
-    <GameFinder />
-    <GamePlayer />
-  </div>
-  <footer>This stupid game is &copy; 2022 by Mike Caron. <a href="https://github.com/pkmnfrk/incremental_incremental">GitHub</a></footer>
+    <div>
+        <h1>Incremental Incremental</h1>
+        <GameFinder />
+        <GamePlayer />
+    </div>
+    <footer>
+        <p>
+            Disclaimer: This game is in development. It might not work properly, time scales might be messed up,
+            it is definitely not balanced or fun, etc. In time, these things will change (maybe except the fun part :), so bear with me!
+        </p>
+        <p>Any resemblance to other incremental games is unintentional, except where funny.</p>
+
+        <p>&copy; 2022 by Mike Caron. <a href="https://github.com/pkmnfrk/incremental_incremental">GitHub</a></p>
+    </footer>
 </template>
 
 <style>
@@ -48,6 +54,8 @@
 
     footer {
         text-align: center;
+        max-width: 1000px;
+        margin: 0 auto;
     }
     footer a {
         color: lightblue;
