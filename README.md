@@ -1,6 +1,7 @@
-# empty-project
+# Incremental Incremental
 
-Empty project.
+An incremental game about completing incremental games. Complete games in order to earn points to
+complete games faster. Meta-pointlessness!
 
 ## Building and running on localhost
 
@@ -10,22 +11,29 @@ First install dependencies:
 npm install
 ```
 
-To create a production build:
+To run locally with dev server:
 
 ```sh
+npm start
+```
+
+To create a dev or production build:
+
+```sh
+npm run build-dev   # pick one
 npm run build-prod
 ```
 
-To create a development build:
+To test the aforementioned build:
 
 ```sh
-npm run build-dev
+npm run testdist
 ```
 
-## Running
+To publish the build:
 
 ```sh
-node dist/bundle.js
+npm run publish
 ```
 
 ## Credits

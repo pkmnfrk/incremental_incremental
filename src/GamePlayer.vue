@@ -12,7 +12,7 @@
 </script>
 
 <template>
-    <template v-if="store">
+    <template v-if="store && store.incremental">
         <h2>{{store.incremental.name}}</h2>
         <p>Clicks: {{formatNumber(Math.floor(store.incremental.clicks))}} / {{formatNumber(store.incremental.maxClicks)}}</p>
         <ProgressBar v-if="store.incremental.clicks < store.incremental.maxClicks" :value="store.incremental.clicks / store.incremental.maxClicks * 100"/>
