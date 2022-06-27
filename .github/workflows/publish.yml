@@ -14,13 +14,19 @@ jobs:
       - run: npm i
       - run: npm run build-prod
       - run: echo -n "" > dist/.nojekyll
+      - run: git clone https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git ghpages -b gh-pages --depth 1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: Clone gh-pages branch
       - run: |
-          git clone https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git ghpages -b gh-pages --depth 1
-          cd ghpages
           git rm *
           cp -r ../dist/. .
           git add *
-          git commit -m "Updates" --author "github-actions-bot <support+actions@github.com>"
-          git push origin gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: ./ghpages
+        name: Copy new build
+      - run: git commit -m "Updates" --author "github-actions-bot <support+actions@github.com>"
+        working-directory: ./ghpages
+        name: Commit new version
+      - run: git push origin gh-pages
+        working-directory: ./ghpages
+        name: Push version
