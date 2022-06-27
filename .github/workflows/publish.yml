@@ -24,8 +24,11 @@ jobs:
           git add *
         working-directory: ./ghpages
         name: Copy new build
-      - run: git commit -m "Updates" --author "github-actions-bot <support+actions@github.com>"
+      - run: git commit -m "Updates"
         working-directory: ./ghpages
+        env:
+          GIT_AUTHOR_EMAIL: support+actions@github.com
+          GIT_AUTHOR_NAME: github-actions-bot
         name: Commit new version
       - run: git push origin gh-pages
         working-directory: ./ghpages
