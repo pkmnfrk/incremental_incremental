@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanPlugin } = require("webpack");
 const {DefinePlugin} = webpack;
 
 const config = {
@@ -56,7 +57,8 @@ const config = {
     new HtmlWebpackPlugin({
       templateContent: ({ htmlWebpackPlugin }) => '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>' + htmlWebpackPlugin.options.title + '</title></head><body><div id=\"app\"></div></body></html>',
       filename: 'index.html',
-    })
+    }),
+    new CleanPlugin(),
   ],
   optimization: {
     runtimeChunk: 'single',
